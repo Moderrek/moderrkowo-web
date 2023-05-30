@@ -2,6 +2,7 @@ import express, { Request, Response } from 'express';
 import fs from 'fs';
 import https from 'https';
 import next from 'next';
+import path from 'path';
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
@@ -9,8 +10,8 @@ const handle = app.getRequestHandler();
 const port = process.env.PORT || 80;
 
 const options = {
-  key: fs.readFileSync('./ssl/moderrkowo.key'),
-  cert: fs.readFileSync('./ssl/moderrkowo.csr'),
+  key: fs.readFileSync(path.resolve(__dirname, '../ssl/moderrkowo.key')),
+  cert: fs.readFileSync(path.resolve(__dirname, '../ssl/moderrkowo.csr')),
 };
 
 (async () => {

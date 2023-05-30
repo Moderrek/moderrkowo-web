@@ -48,8 +48,8 @@ var app = (0, next_1.default)({ dev: dev });
 var handle = app.getRequestHandler();
 var port = process.env.PORT || 80;
 var options = {
-    key: fs_1.default.readFileSync('./ssl/moderrkowo.key'),
-    cert: fs_1.default.readFileSync('./ssl/moderrkowo.csr'),
+    key: fs_1.default.readFileSync('../ssl/moderrkowo.key'),
+    cert: fs_1.default.readFileSync('../ssl/moderrkowo.csr'),
 };
 (function () { return __awaiter(void 0, void 0, void 0, function () {
     var server, e_1;
