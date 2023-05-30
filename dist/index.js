@@ -40,11 +40,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = __importDefault(require("express"));
+var fs_1 = __importDefault(require("fs"));
+var https_1 = __importDefault(require("https"));
 var next_1 = __importDefault(require("next"));
 var dev = process.env.NODE_ENV !== 'production';
 var app = (0, next_1.default)({ dev: dev });
 var handle = app.getRequestHandler();
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 80;
+var options = {
+    key: fs_1.default.readFileSync('./ssl/moderrkowo.key'),
+    cert: fs_1.default.readFileSync('./ssl/moderrkowo.csr'),
+};
 (function () { return __awaiter(void 0, void 0, void 0, function () {
     var server, e_1;
     return __generator(this, function (_a) {
@@ -61,7 +67,10 @@ var port = process.env.PORT || 3000;
                 server.listen(port, function (err) {
                     if (err)
                         throw err;
-                    console.log("> Ready on localhost:".concat(port, " - env ").concat(process.env.NODE_ENV));
+                    console.log("> Ready on http://localhost:".concat(port, " - env ").concat(process.env.NODE_ENV));
+                });
+                https_1.default.createServer(options, server).listen(443, function () {
+                    console.log("> Ready on https://localhost:443 - env ".concat(process.env.NODE_ENV));
                 });
                 return [3 /*break*/, 3];
             case 2:

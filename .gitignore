@@ -14,8 +14,10 @@
 
 # production
 /build
+/dist
 
 # misc
+/ssl
 .DS_Store
 *.pem
 
