@@ -1,3 +1,6 @@
+import { faDiscord, faFacebook, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faStore } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Button, Tooltip, Typography } from '@material-tailwind/react';
 import * as React from 'react';
 
@@ -5,6 +8,7 @@ import Faq from '@/components/Faq';
 import Footer from '@/components/layout/Footer';
 import Layout from '@/components/layout/Layout';
 import Navbar from '@/components/layout/Navbar';
+import NextImage from '@/components/NextImage';
 import Seo from '@/components/Seo';
 
 
@@ -12,9 +16,54 @@ import Seo from '@/components/Seo';
 export default function HomePage() {
   return (
     <Layout>
-      {/* <Seo templateTitle='Home' /> */}
       <Seo />
       <Navbar />
+      <div className="container mx-auto flex flex-col-reverse lg:flex-row items-center gap-12 mt-14 lg:mt-28">
+        <div className="flex justify-center flex-1 mb-10 md:mb-16 lg:mb-0">
+          <NextImage
+            useSkeleton={false}
+            layout="image"
+            width={600}
+            height={240}
+            className="shadow-lg rounded align-middle border-none"
+            src="/images/baner.png"
+            alt="Moderrkowo"
+          />
+        </div>
+      </div>
+      <div className="container mx-auto flex flex-col-reverse lg:flex-row items-center gap-12 mt-3 lg:mt-7">
+        <div className="flex flex-1 flex-col items-center lg:items-start">
+          <h2 className="text-amber-600 text-5xl md:text-4 lg:text-5xl text-center lg:text-left mb-6 font-bold">
+            Moderrkowo.PL
+          </h2>
+          <p className="text-bookmark-grey text-lg text-center lg:text-left mb-6">
+            Najlepszy serwer Minecraft w Polsce. Zagraj w Minecraft na najlepszym trybie surwiwal!
+          </p>
+          <div className="flex justify-center flex-wrap gap-6">
+            <Tooltip content="Wesprzyj serwer Moderrkowo.PL i zakup rangę w naszym sklepie!">
+              <Button variant='gradient' color='orange'>
+                <a href='https://sklep.moderrkowo.pl/category/survival-ekonomia'><FontAwesomeIcon icon={faStore} /> Sklep Survival</a>
+              </Button>
+            </Tooltip>
+            <Tooltip content="Porozmawiaj z nami na naszym Discordzie!">
+              <a href="https://discord.gg/mBat5Gw2na">
+                <Button color="indigo" variant="gradient"><FontAwesomeIcon icon={faDiscord} /> Dołącz DISCORD</Button>
+              </a>
+            </Tooltip>
+          </div>
+        </div>
+        <Tooltip content="Porozmawiaj z nami na naszym Discordzie!">
+          <a href="https://discord.gg/mBat5Gw2na">
+
+
+            <div className="flex justify-center flex-1 mb-10 md:mb-16 lg:mb-0">
+              {/* <img className="hidden lg:block w-1/4 h-auto align-middle" src={bee} alt="baner" />
+                 */}
+              <iframe src="https://discord.com/widget?id=920374927733960774&theme=dark" width="350" height="500" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+            </div>
+          </a>
+        </Tooltip>
+      </div>
       <section className="container mx-auto py-20 mt-20 lg:mt-40 bg-blue-gray-50 shadow-lg rounded-lg">
         <h1 className="text-3xl text-center text-amber-600 font-bold">Survival / Działki / Ekonomia</h1>
         <Typography className="text-center text-gray-600 mt-4">
@@ -25,20 +74,20 @@ export default function HomePage() {
         <div className="flex flex-row items-center justify-center sm:flex-row gap-6 mt-8 text-amber-600">
           <Tooltip content="Wesprzyj serwer Moderrkowo.PL i zakup rangę w naszym sklepie!">
             <Button variant='gradient' color='orange'>
-              <a href='https://sklep.moderrkowo.pl/category/survival-ekonomia'>SK Sklep Survival</a>
+              <a href='https://sklep.moderrkowo.pl/category/survival-ekonomia'><FontAwesomeIcon icon={faStore} /> Sklep Survival</a>
             </Button>
           </Tooltip>
           <Tooltip content="Discord Moderrkowo">
-            <a href="https://discord.gg/mBat5Gw2na">DC</a>
+            <a href="https://discord.gg/mBat5Gw2na"><FontAwesomeIcon icon={faDiscord} /></a>
           </Tooltip>
           <Tooltip content="Twitter Moderrkowo">
-            <a href="https://twitter.com/ModerrkowoPL">TW</a>
+            <a href="https://twitter.com/ModerrkowoPL"><FontAwesomeIcon icon={faTwitter} /></a>
           </Tooltip>
           <Tooltip content="Facebook Moderrkowo">
-            <a href="https://www.facebook.com/moderrkowo">FB</a>
+            <a href="https://www.facebook.com/moderrkowo"><FontAwesomeIcon icon={faFacebook} /></a>
           </Tooltip>
           <Tooltip content="Instagram Moderrkowo">
-            <a href="https://instagram.com/moderrkowo/">IG</a>
+            <a href="https://instagram.com/moderrkowo/"><FontAwesomeIcon icon={faInstagram} /></a>
           </Tooltip>
         </div>
       </section>
@@ -53,7 +102,7 @@ export default function HomePage() {
         <p className='text-center text-gray-700 mt-4'>Wersja Minecraft: <code className="inline-block bg-green-200 p-1 rounded">1.19.x</code></p>
         <Tooltip content="Porozmawiaj z nami na naszym Discordzie!">
           <a className='mt-4' href="https://discord.gg/mBat5Gw2na">
-            <Button color="indigo" variant="gradient">DC Dołącz DISCORD</Button>
+            <Button color="indigo" variant="gradient"><FontAwesomeIcon icon={faDiscord} /> Dołącz DISCORD</Button>
           </a>
         </Tooltip>
       </section>

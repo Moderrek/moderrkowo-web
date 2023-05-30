@@ -1,3 +1,5 @@
+import { faRightToBracket } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Button, IconButton, MobileNav, Typography } from "@material-tailwind/react";
 import React from "react";
 
@@ -57,7 +59,7 @@ export default function Navbar() {
   );
   return (
     <>
-      <div className="sticky inset-0 z-10 h-max max-w-full rounded-none py-2 px-4 lg:px-8 lg:py-4">
+      <div className="block w-full shadow-md backdrop-saturate-200 backdrop-blur-2xl bg-opacity-80 border border-white/80 bg-white text-white sticky inset-0 z-10 h-max max-w-full rounded-none py-2 px-4 lg:px-8 lg:py-4">
         <div className="flex items-center justify-between text-blue-gray-900">
           <UnstyledLink href="/" className="mr-4 cursor-pointer py-1.5 font-bold">
             Moderrkowo
@@ -67,7 +69,7 @@ export default function Navbar() {
 
             <UnstyledLink href="/zaloguj">
               <Button variant="gradient" size="sm" className="hidden lg:inline-block">
-                - Zaloguj się
+                <FontAwesomeIcon icon={faRightToBracket} /> Zaloguj się
               </Button>
             </UnstyledLink>
 
