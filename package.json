@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build:server": "tsc --project tsconfig.server.json",
-    "build:next": "next build",
+    "build:next": "next build && npm run postbuild",
     "dev": "next dev",
     "build": "npm run build:next && npm run build:server",
     "start": "node dist/index.js",

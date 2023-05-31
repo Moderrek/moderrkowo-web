@@ -31,7 +31,7 @@ export default function Navbar() {
       </Typography> */}
 
       <Typography as="li" variant="small" color="blue-gray" className="p-1 font-normal">
-        <a href="https://sklep.moderrkowo.pl/category/survival-ekonomia" className="flex items-center">
+        <a href="https://moderrkowo.tebex.io/category/survival-ekonomia" className="flex items-center">
           Sklep
         </a>
       </Typography>

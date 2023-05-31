@@ -10,14 +10,14 @@ export default function zaloguj() {
   return (
     <>
       <Navbar />
-      <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+      <div className="flex flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <NextImage
-            useSkeleton={false}
+            useSkeleton={true}
             layout="image"
             width={64}
             height={64}
-            className="mx-auto h-10 w-auto"
+            className="mx-auto h-auto w-auto flex justify-center"
             src="/images/small-og.png"
             alt="Moderrkowo"
           />

@@ -17,7 +17,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     }
 
     const result: AuthUser[] = await excuteQuery(
-      'SELECT `UUID`,`NAME`,`PASSWORD` FROM `auth` WHERE `NAME`=?;',
+      'SELECT `UUID`,`NAME`,`PASSWORD` FROM `auth` WHERE `NAME`=? LIMIT 1;',
       [name]
     );
 

@@ -2,10 +2,10 @@ import { Head, Html, Main, NextScript } from 'next/document';
 
 export default function Document() {
   return (
-    <Html lang='pl_PL' className='h-full bg-white'>
+    <Html lang='pl_PL'>
       <Head>
       </Head>
-      <body className='h-full'>
+      <body>
         <Main />
         <NextScript />
       </body>
