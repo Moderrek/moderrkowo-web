@@ -4,7 +4,7 @@ import https from 'https';
 import next from 'next';
 import path from 'path';
 
-const dev = process.env.NODE_ENV !== 'production';
+const dev = false;
 const app = next({ dev });
 const handle = app.getRequestHandler();
 const port = process.env.PORT || 80;
