@@ -1,6 +1,7 @@
 import { faRightToBracket } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Button, IconButton, MobileNav, Typography } from "@material-tailwind/react";
+import { signIn } from 'next-auth/react';
 import React from "react";
 
 import UnstyledLink from "@/components/links/UnstyledLink";
@@ -67,11 +68,12 @@ export default function Navbar() {
           <div className="flex items-center gap-4">
             <div className="mr-4 hidden lg:block">{navList}</div>
 
-            <UnstyledLink href="/zaloguj">
-              <Button variant="gradient" size="sm" className="hidden lg:inline-block">
-                <FontAwesomeIcon icon={faRightToBracket} /> Zaloguj się
-              </Button>
-            </UnstyledLink>
+
+            <Button variant="gradient" size="sm" className="hidden lg:inline-block" onClick={() => {
+              signIn();
+            }}>
+              <FontAwesomeIcon icon={faRightToBracket} /> Zaloguj się
+            </Button>
 
 
             <IconButton
